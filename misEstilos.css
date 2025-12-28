@@ -55,3 +55,26 @@ h2{
     margin-right: 5px;
     margin-bottom: 5px;
 }
+
+@media (max-width: 520px){
+  .inputs{
+    grid-template-columns: 1fr;
+  }
+  .grid-4{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* landscape en teléfono: evita cortes por poco alto */
+@media (max-height: 520px) and (orientation: landscape){
+  body{
+    place-items: start center;
+    overflow-y: auto;
+  }
+  .card{
+    padding: 14px;
+  }
+  button, input{
+    padding: 10px;
+  }
+}
