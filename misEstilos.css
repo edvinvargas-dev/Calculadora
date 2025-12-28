@@ -1,61 +1,94 @@
+* { box-sizing: border-box; }
+
 body{
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #0b1220;
+  color: #e7eefc;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+/* tarjeta */
+.card{
+  width: min(520px, 100%);
+  background: #121b2f;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  display: grid;
+  gap: 12px;
+}
+
+h2{
+  margin: 0 0 6px;
+  text-align: center;
+}
+
+/* inputs */
+.inputs{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
 input{
-    height: 20px;    
-    width: 80px;
-    font-size: 1rem;
-    text-align: center;
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #0f1730;
+  color: #e7eefc;
+  outline: none;
 }
+
+/* grids de botones */
+.grid{
+  display: grid;
+  gap: 10px;
+}
+
+.grid-4{ grid-template-columns: repeat(4, 1fr); }
+.grid-3{ grid-template-columns: repeat(3, 1fr); }
+.grid-2{ grid-template-columns: repeat(2, 1fr); }
+
 button{
-    width: 40px;
-    height:35px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-right: 2px;
+  padding: 12px 10px;
+  border-radius: 14px;
+  border: 0;
+  cursor: pointer;
+  background: rgba(255,255,255,.10);
+  color: #e7eefc;
+  font-weight: 650;
 }
 
-.doble button{
-    height: 35px;    
-    width: 88px;
-    font-size: 1rem;
-    font-weight: bold;
-    margin-right: 5px;
-    margin-bottom: 3px;
+button:hover{
+  background: rgba(255,255,255,.16);
 }
 
-.triple button{
-    height: 35px;    
-    width: 56px;
-    font-size: 1rem;
-    font-weight: bold;
-    margin-right: 5px;
+.label{
+  margin: 0;
+  opacity: .9;
+  text-align: center;
 }
 
-#CampoResultado{
-    height: 20px;
-    width: 170px;
-    font-size: 1rem;
-    text-align: center;
-    font-weight: bold;
-}
-h2{
-    border: 2px  solid ;
-    padding: 10px;
-    display: inline-block;
-    font-size: 1.25rem;
-    text-align: center;
-}
-#reiniciarDatos{
-    height: 35px;    
-    width: 179px;
-    font-size: 1rem;
-    font-weight: bold;
-    margin-right: 5px;
-    margin-bottom: 5px;
+.danger{
+  background: #2f6bff;
+  color: white;
 }
 
+.danger:hover{
+  filter: brightness(1.05);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+/* móviles: botones más grandes y inputs en una columna */
 @media (max-width: 520px){
   .inputs{
     grid-template-columns: 1fr;
